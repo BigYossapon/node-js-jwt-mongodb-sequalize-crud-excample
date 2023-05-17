@@ -1,5 +1,6 @@
 module.exports = {
   HOST: process.env.HOST,
   PORT: 27017,
-  DB: process.env.DB
+  DB: 'projects',
+  url: "mongodb://localhost:27017/projects"
 };

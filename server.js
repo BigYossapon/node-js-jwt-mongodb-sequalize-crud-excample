@@ -18,9 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
 const Role = db.role;
-
+//`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB
 db.mongoose
-  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+  .connect(dbConfig.url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -35,7 +35,7 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to application." });
 });
 
 //ไว้ดึง path รูป
